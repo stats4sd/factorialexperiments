@@ -10,8 +10,7 @@
 library(shiny)
 library(agridat)
 library(tidyverse)
-#remotes::install_github("rstudio/sortable")
-library(sortable)
+
 data1<-cox.stripsplit
 data1$none<-"1"
 data1$x<-data1$soil
@@ -47,23 +46,7 @@ ui <- fluidPage(
 # Define server logic required to draw a histogram
 server <- function(input, output) {
 
- #   observe({
-#    data1$x1<-data1[,input$x]
-    
-#    output$bucketlist <- renderUI({
- #   bucket_list(   
-  #      header = "Drag and drop to create custom ordern",
-   #     group_name = "order",
-    #    orientation = "vertical",
-     #   add_rank_list(text = "Levels",
-      #                labels = levels(data1$x1), 
-       #               input_id = "custom")
-    #)
-    #})
-    #})
-    
-    
-    output$Plot1 <- renderPlot({
+output$Plot1 <- renderPlot({
         
         data1$x<-data1[,input$x]
      
